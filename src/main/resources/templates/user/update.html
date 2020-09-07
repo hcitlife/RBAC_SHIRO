@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>修改用户</title>
+    </head>
+    <body>
+        <p>修改用户</p>
+        <form  th:action="@{/admin/update}" th:method="post">
+            <input type="hidden" name="id" th:value="${admin.id}"><br>
+            账户：<input type="text" name="account" th:value="${admin.account}"><br>
+            昵称：<input type="text" name="password" th:value="${admin.nickname}"><br>
+            性别：<input type="radio" name="gender" th:checked="${admin.gender?true:false}">男
+                <input type="radio" name="gender" th:checked="${admin.gender?false:true}">女
+            <br>
+            <input type="submit" value="增加">
+        </form>
+    </body>
+</html>

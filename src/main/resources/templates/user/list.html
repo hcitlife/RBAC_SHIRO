@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>用户列表</title>
+    </head>
+    <body>
+        <p th:text="${msg}"></p>
+        <a th:href="@{/admin/list}">用户列表</a>
+        <a th:href="@{/admin/toAdd}">增加用户</a>
+
+        <table border="1px solid red">
+            <tr>
+                <th>img</th>
+                <th>account</th>
+                <th>nickname</th>
+                <th>gender</th>
+                <th>Operation</th>
+            </tr>
+            <tr th:each="admin : ${adminList}">
+                <td th:text="${admin.img}"></td>
+                <td th:text="${admin.account}"></td>
+                <td th:text="${admin.nickname}"></td>
+                <td th:text="${admin.gender}"></td>
+                <td>
+                    <a th:href="@{/admin/toDetail/{id}/(id=${admin.id})}">详情</a>
+                    <a th:href="@{/admin/toUpdate/{id}/(id=${admin.id})}">修改</a>
+                    <a th:href="@{/admin/delete/{id}/(id=${admin.id})}">删除</a>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

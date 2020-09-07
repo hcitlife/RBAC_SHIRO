@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+    <head>
+        <meta charset="UTF-8">
+        <title>首页</title>
+    </head>
+    <body>
+        <p th:text="${msg}"></p>
+        <br> <br>
+        <a th:href="@{/admin/toLogin}">登录</a>
+        <a th:href="@{/admin/logout}">退出登录</a>
+        <br><br>
+
+        <shiro:principal property="nickname"></shiro:principal>
+
+
+        <br><br>
+        <a th:href="@{/admin/toList}">显示用户列表（需要登录）</a>
+        <br>
+        <a th:href="@{/storage/toList}">打开仓库列表页</a>
+    </body>
+</html>

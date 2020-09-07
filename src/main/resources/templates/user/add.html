@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>增加用户</title>
+    </head>
+    <body>
+        <p th:text="${msg}"></p>
+        <a th:href="@{/admin/add}">增加用户</a>
+        <form th:action="@{/admin/add}" th:method="post">
+            账户：<input type="text" name="account" id="account"><br>
+            密码：<input type="text" name="password" id="password"><br>
+            <input type="submit" value="增加">
+        </form>
+    </body>
+</html>
